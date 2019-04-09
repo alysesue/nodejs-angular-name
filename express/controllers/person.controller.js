@@ -14,7 +14,7 @@ const personController = function(app) {
 
     const dataService = new DataService(datastore);
 
-    // add
+    // add api
     app.post("/api/v1/add", function (req, res) { 
         let firstName = req.body.firstName;
         let lastName = req.body.lastName;
