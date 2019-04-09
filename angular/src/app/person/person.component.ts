@@ -26,6 +26,8 @@ export class PersonComponent implements OnInit {
       return;
     }
 
+    this.form.reset();
+
     this.person = {
       firstName: formData.firstName,
       lastName: formData.lastName

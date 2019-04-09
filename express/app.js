@@ -22,7 +22,7 @@ personController(app);
 // server startup
 app.listen(1000, function () {
     console.log('App listening on port 1000');
-})
+});
 
 // export module so can use in other modules
 module.exports = app;

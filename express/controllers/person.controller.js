@@ -19,7 +19,7 @@ const personController = function(app) {
         let firstName = req.body.firstName;
         let lastName = req.body.lastName;
 
-        let person = new Person(firstName, lastName)
+        let person = new Person(firstName, lastName);
 
         let personKey = datastore.key('Person');
 
@@ -47,17 +47,19 @@ const personController = function(app) {
             .create(entity) 
             .then(() => {
               res.json(
-                firstName + ' ' + lastName + ' is now registered. ' +
-                'Sum of ASCII values = ' + sumASCIIresult +
-                ' Longest number of consecutive zeroes = ' + longestBinResult
+                  'Hello ' + firstName + ' ' + lastName + '.\n\n' +
+                  'When your name is converted to ASCII: \n' +
+                  'Sum of ASCII values = ' + sumASCIIresult + '.\n\n' +
+                  'When sum of ASCII is converted to binary: \n' +
+                  'Longest number of consecutive zeroes = ' + longestBinResult + '.' 
                 )
             })
             .catch((err) => {
               res.json(
-                'Error registering: ' + err
+                'Error entering your name. \n Please try again.'
               )
             });
-    })
+    });
 
     // convert to ASCII value and sum
     function sumASCII(firstName, lastName) {
@@ -68,7 +70,7 @@ const personController = function(app) {
             .split('') //turn into array of char
             .forEach(function(letter) {
                 sum += letter.charCodeAt(0); // find value of char and sum
-            })
+            });
         return sum;
     }
 

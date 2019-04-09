@@ -1,3 +1,7 @@
+.angular-with-newlines {
+  white-space: pre;
+}
+
 body,
 html {
   width: 100%;
