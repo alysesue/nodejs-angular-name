@@ -21,4 +21,21 @@ export class PersonComponent implements OnInit {
     });
   }
 
+  submit = function(formData) {
+    if (this.form.invalid) {
+      return;
+    }
+
+    this.person = {
+      firstName: formData.firstName,
+      lastName: formData.lastName
+    };
+
+    this.data.registerPerson(this.person)
+      .subscribe(msg => {
+        this.msg = msg.body;
+        console.log(msg);
+      });
+  };
+
 }
