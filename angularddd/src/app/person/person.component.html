@@ -1,0 +1,41 @@
+<!-- Header -->
+<header class="masthead d-flex">
+  <div class="container text-center my-auto mx-auto">
+    <h1 class="mb-1" style="color:white">Explore Australia your own way</h1>
+    <h3 class="mb-5" style="color:white">
+      <em>with exclusive luxury escapes</em>
+    </h3>
+    <!--<a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Browse Destinations</a>-->
+    <!--<form class="flex-form" #f="ngForm" novalidate>-->
+    <form class="mx-auto" #f="ngForm" novalidate>
+      <div class="input-group-append">
+        <!--<label for="from">
+          <i class="ion-location"></i>
+        </label>-->
+        <input class="form-control" type="search" placeholder="Where do you want to go?" name="locName" [(ngModel)]="locationName" #locName="ngModel" />
+        <button type="submit" value="Search" (click)="getPackagesByLocName(locationName)">Search</button>
+      </div>
+    </form>
+
+  </div>
+  <div class="overlay"></div>
+</header>
+
+
+<h1>Enter your first and last name</h1>
+
+<h2>Find out the sum of ASCII values of your name</h2>
+
+    <div class="container">
+
+        <fieldset>
+            <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+                <input matInput name="firstName" type="text" class="ghost-input" formControlName="firstName" placeholder="First name" required>
+                <input  matInput name="lastName" type="text" class="ghost-input" formControlName="lastName" placeholder="Last name" required>
+                <input mat-raised-button type="submit" class="ghost-button" value="submit">
+            </form>
+        </fieldset>
+              
+    </div>
+
+<h1>{{ msg }}</h1>
