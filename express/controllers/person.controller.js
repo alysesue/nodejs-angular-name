@@ -8,8 +8,8 @@ const { Datastore } = require('@google-cloud/datastore');
 const personController = function(app) {
 
     const datastore = new Datastore({
-        projectId: 'datastorepuppies',
-        keyFilename: 'DataStorePuppies-ce7544c8af76.json'
+        projectId: 'datastoredemodatabase',
+        keyFilename: 'DataStoreDemoDatabase-08c240030487.json'
     });
 
     const dataService = new DataService(datastore);

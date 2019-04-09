@@ -15,6 +15,7 @@ export class DataService {
     observe: 'response'
   };
 
+  // register person service
   registerPerson(person) {
     return this.http.post('http://localhost:1000/api/v1/add', person, this.httpOptions );
   }

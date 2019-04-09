@@ -21,6 +21,7 @@ export class PersonComponent implements OnInit {
     });
   }
 
+  // submit form function
   submit = function(formData) {
     if (this.form.invalid) {
       return;
