@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/alysesue/nodejs-angular-name/issues"
   },
-  "homepage": "https://github.com/alysesue/nodejs-angular-name#readme"
+  "homepage": "https://github.com/alysesue/nodejs-angular-name#readme",
+  "dependencies": {
+    "bluebird": "^3.5.4",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
 }
