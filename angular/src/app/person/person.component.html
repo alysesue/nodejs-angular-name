@@ -1,3 +1,17 @@
-<p>
-  person works!
-</p>
+<h1>Enter your first and last name</h1>
+
+<h2>Find out the sum of ASCII values of your name</h2>
+
+    <div class="container">
+
+        <fieldset>
+            <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+                <input matInput name="firstName" type="text" class="ghost-input" formControlName="firstName" placeholder="First name" required>
+                <input  matInput name="lastName" type="text" class="ghost-input" formControlName="lastName" placeholder="Last name" required>
+                <input mat-raised-button type="submit" class="ghost-button" value="submit">
+            </form>
+        </fieldset>
+              
+    </div>
+
+<h1>{{ msg }}</h1>
