@@ -4,6 +4,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const personController = require('./controllers/person.controller');
 
 // middleware
 app.use(express.static('public'));
@@ -16,6 +17,7 @@ app.use(function(req, res, next) {
 });
 
 // set routes to use express app
+personController(app);
 
 // server startup
 app.listen(1000, function () {
