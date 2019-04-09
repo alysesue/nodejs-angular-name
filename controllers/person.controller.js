@@ -40,6 +40,7 @@ const personController = function(app) {
         };
 
         let sumASCIIresult = sumASCII(firstName, lastName);
+        let binSumASCIIresult = binSumASCII(sumASCIIresult);
 
         dataService
             .create(entity) 
@@ -67,6 +68,13 @@ const personController = function(app) {
             sum += letter.charCodeAt(0); // find value of char and sum
             })
         return sum;
+    }
+
+    // convert sum of ASCII values to binary (assume int and positive)  
+    function binSumASCII(sumASCIIresult) {
+        let result =
+            (sumASCIIresult >>> 0).toString(2); // unsigned right shift bitwise operator (>>>) to coerce number to unsigned integer // toString converts to binary
+        return result;
     }
 
 
