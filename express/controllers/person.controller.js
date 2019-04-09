@@ -54,7 +54,7 @@ const personController = function(app) {
                   'Longest number of consecutive zeroes = ' + longestBinResult + '.' 
                 )
             })
-            .catch((err) => {
+            .catch(() => {
               res.json(
                 'Error entering your name. \n Please try again.'
               )
