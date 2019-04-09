@@ -41,13 +41,15 @@ const personController = function(app) {
 
         let sumASCIIresult = sumASCII(firstName, lastName);
         let binSumASCIIresult = binSumASCII(sumASCIIresult);
+        let longestBinResult = longestBin(binSumASCIIresult);
 
         dataService
             .create(entity) 
             .then(() => {
               res.json(
                 firstName + ' ' + lastName + ' is now registered. ' +
-                'Sum of ASCII values = ' + sumASCIIresult
+                'Sum of ASCII values = ' + sumASCIIresult +
+                ' Longest number of consecutive zeroes = ' + longestBinResult
                 )
             })
             .catch((err) => {
@@ -65,7 +67,7 @@ const personController = function(app) {
         personString
             .split('') //turn into array of char
             .forEach(function(letter) {
-            sum += letter.charCodeAt(0); // find value of char and sum
+                sum += letter.charCodeAt(0); // find value of char and sum
             })
         return sum;
     }
@@ -74,6 +76,15 @@ const personController = function(app) {
     function binSumASCII(sumASCIIresult) {
         let result =
             (sumASCIIresult >>> 0).toString(2); // unsigned right shift bitwise operator (>>>) to coerce number to unsigned integer // toString converts to binary
+        return result;
+    }
+
+    // find longest number of consecutive 0s
+    function longestBin(binSumASCIIresult) {
+        let result =
+            binSumASCIIresult.split('1') // convert to array
+                .reduce((curr, prev) => curr.length > prev.length ? curr : prev) // cycle through like a for loop
+                .length;
         return result;
     }
 
