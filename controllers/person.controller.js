@@ -39,11 +39,14 @@ const personController = function(app) {
             ],
         };
 
+        let sumASCIIresult = sumASCII(firstName, lastName);
+
         dataService
-            .create(entity)
+            .create(entity) 
             .then(() => {
               res.json(
-                firstName + ' ' + lastName + ' is now registered. '
+                firstName + ' ' + lastName + ' is now registered. ' +
+                'Sum of ASCII values = ' + sumASCIIresult
                 )
             })
             .catch((err) => {
@@ -65,6 +68,8 @@ const personController = function(app) {
             })
         return sum;
     }
+
+
 
 }
 
