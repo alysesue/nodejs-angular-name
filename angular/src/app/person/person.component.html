@@ -7,23 +7,19 @@
       <br>
     </h2>
     <div class="container">
-
         <fieldset>
             <form [formGroup]="form" (ngSubmit)="submit(form.value)">
-                <input matInput name="firstName" type="text" class="ghost-input" formControlName="firstName" placeholder="First name" required>
-                <input  matInput name="lastName" type="text" class="ghost-input" formControlName="lastName" placeholder="Last name" required>
-                <input mat-raised-button type="submit" class="ghost-button" value="submit">
+                <input name="firstName" type="text" class="ghost-input" formControlName="firstName" placeholder="First name" required>
+                <input name="lastName" type="text" class="ghost-input" formControlName="lastName" placeholder="Last name" required>
+                <input type="submit" class="ghost-button" value="Submit">
             </form>
-        </fieldset>
-              
+        </fieldset>   
     </div>
-
   </div>
   
-  <div class="overlay">
-    <h2>{{ msg }}</h2>
+  <div class="overlay text-center my-auto mx-auto">
+    <h2 class="mb-1" style="color:white">{{ msg }}</h2>
   </div>
-
 </section>
 
 
