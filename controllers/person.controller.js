@@ -53,6 +53,19 @@ const personController = function(app) {
             });
     })
 
+    // convert to ASCII value and sum
+    function sumASCII(firstName, lastName) {
+        // create string from first and last name. remove space at end
+        let personString = (firstName + ' ' + lastName).trim();
+        let sum = 0;
+        personString
+            .split('') //turn into array of char
+            .forEach(function(letter) {
+            sum += letter.charCodeAt(0); // find value of char and sum
+            })
+        return sum;
+    }
+
 }
 
 module.exports = personController;
